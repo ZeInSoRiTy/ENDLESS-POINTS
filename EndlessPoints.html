@@ -1,0 +1,426 @@
+<html>
+    <body style="background-color:rgb(22, 22, 22)">
+    <head>
+        <title>Test Incremental Game</title>
+
+        <style>
+          p {
+            color: white;
+          }
+          .centralSection {
+            width: 800px;
+            height: 200px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -400px;
+          }
+          .upgradeShop {
+           width: 60%;
+           margin: 10px 0px 10px 0px;           
+          }
+
+          .Options {
+           width: 10%;
+           margin: 10px 0px 10px 0px;           
+          }
+
+
+          .gameTabs {
+            float: left;
+            vertical-align: top;
+          }
+
+          .addPoint {
+           width: 25%;
+           margin: 10px 0px 10px 0px;           
+          }
+
+          .upgradeShop #price p:hover {
+            background-color: rgb(54, 54, 54);
+            transform: scale(1.10);
+            transition: all .2s ease-in-out;
+          }
+          
+          .upgradeShop #price p:active {
+            transform: scale(0.9);
+            transition: all .1s ease-in-out;
+          }
+          .upgradeShop #max p:hover {
+            background-color: rgb(54, 54, 54);
+            transform: scale(1.10);
+            transition: all .2s ease-in-out;
+          }
+
+          .upgradeShop #max p:active {
+            transform: scale(0.9);
+            transition: all .1s ease-in-out;
+          }
+
+          .gameTabs #tabName p:hover {
+            background-color: rgb(54, 54, 54);
+            transform: scale(1.10);
+            transition: all .2s ease-in-out;
+          }
+          
+          .gameTabs #tabName p:active {
+            transform: scale(0.9);
+            transition: all .1s ease-in-out;
+          }
+
+          .Options #optionName p:hover {
+            background-color: rgb(54, 54, 54);
+            transform: scale(1.10);
+            transition: all .2s ease-in-out;
+          }
+          
+          .Options #optionName p:active {
+            transform: scale(0.9);
+            transition: all .1s ease-in-out;
+          }
+
+          
+          .Options #optionNameSpecial p:hover {
+            background-color: rgb(54, 54, 54);
+            transform: scale(1.10);
+            transition: all .2s ease-in-out;
+          }
+          
+          .Options #optionNameSpecial p:active {
+            transform: scale(0.9);
+            transition: all .1s ease-in-out;
+          }
+
+
+          .upgradeShop #nameAndDescription p {
+            margin: 0px;
+          }
+
+          .addPoint #button p:hover {
+            background-color: rgb(54, 54, 54);
+            transform: scale(1.10);
+            transition: all .2s ease-in-out;
+          }
+
+          .addPoint #button p:active {
+            transform: scale(0.99);
+            transition: all .1s ease-in-out;
+          }
+
+          .upgradeShop #price p {
+            height: 40px;
+            width: 160px;
+            margin-left: 22px;
+            background-color: rgb(114, 114, 114);
+           transition: all .2s ease-in-out;
+           border-radius: 5px;
+           border-style: solid;
+           border-width: 3px;
+           border-color: rgb(155, 155, 155);
+           font-size: 20px;
+           text-align: center;
+           vertical-align: middle;
+           line-height: 200%;
+           font-weight: bolder;
+           user-select: none;
+          }
+          .upgradeShop #max p {
+            height: 40px;
+            width: 120px;
+            background-color: rgb(114, 114, 114);
+           transition: all .2s ease-in-out;
+           border-radius: 5px;
+           border-style: solid;
+
+           border-width: 3px;
+           border-color: rgb(155, 155, 155);
+           font-size: 30px;
+           text-align: center;
+           line-height: 125%;
+           font-weight: bolder;
+           user-select: none;
+           
+          }
+
+          .gameTabs #tabName p {
+            height: 40px;
+            width: 120px;
+            background-color: rgb(114, 114, 114);
+           transition: all .2s ease-in-out;
+           border-radius: 5px;
+           border-style: solid;
+           border-width: 3px;
+           border-color: rgb(155, 155, 155);
+           font-size: 30px;
+           text-align: center;
+           line-height: 125%;
+           font-weight: bolder;
+           user-select: none;
+           vertical-align: top;
+          }
+
+          .Options #optionName p {
+            height: 40px;
+            width: 160px;
+            background-color: rgb(114, 114, 114);
+           transition: all .2s ease-in-out;
+           border-radius: 5px;
+           border-style: solid;
+           border-width: 3px;
+           border-color: rgb(155, 155, 155);
+           font-size: 30px;
+           text-align: center;
+           line-height: 125%;
+           font-weight: bolder;
+           user-select: none;
+           vertical-align: top;
+          }
+
+
+          .Options #optionNameSpecial p {
+            height: 40px;
+            width: 160px;
+            background-color: rgb(114, 114, 114);
+           transition: all .2s ease-in-out;
+           border-radius: 5px;
+           border-style: solid;
+           border-width: 3px;
+           border-color: rgb(155, 155, 155);
+           font-size: 24px;
+           
+           text-align: center;
+           line-height: 170%;
+           font-weight: bolder;
+           user-select: none;
+           vertical-align: top;
+            color: red;
+          }
+          .addPoint #button p {
+            height: 40px;
+            width: 160px;
+            background-color: rgb(88, 88, 88);
+           transition: all .2s ease-in-out;
+           border-radius: 5px;
+           border-style: solid;
+           border-width: 3px;
+           border-color: rgb(129, 129, 129);
+           font-size: 20px;
+           text-align: center;
+           line-height: 200%;
+           font-weight: bolder;
+           user-select: none;       
+          }
+          
+          .upgradeShop #nameAndDescription p:first-of-type {
+            font-size: 20px;
+          }  
+          .pointsRelated {
+            width: 100%;
+           margin: 10px 0px 10px 0px; 
+            background-color: rgb(61, 60, 60);
+            border-radius: 8px;
+          }
+          
+          .pointsRelated #amountAndPpS p {
+            margin: 0px;
+          }
+
+
+          .pointsRelated #amountAndPpS p:first-of-type {
+            font-size: 24px;
+            font-weight: bold;
+          }
+
+          .pointsRelated #amountAndPpS p:nth-of-type(2) {
+            font-size: 18px;
+          }
+
+          #upgrade1Amount {
+            color: lime;
+            font-weight: bolder;
+          }
+          #upgrade2Amount {
+            color: lime;
+            font-weight: bolder;
+          }
+          #points {
+            color: red;
+          }
+          #addPoint {
+            background-color: transparent;
+            border: none;
+            margin: 0;
+            padding: 0;
+            text-align: inherit;
+            font: inherit;
+            border-radius: 0;
+            appearance: none;
+          }
+
+          .tabs {
+          display: none;
+          }
+        </style>
+    </head>
+
+    <body>
+        <div id="Game" class="tabs">
+          <div class="centralSection">
+            <table class="pointsRelated">
+              <tr>
+                <td id="amountAndPpS">
+                  <p>Your points: <span id="points">0.00</span></p>
+                  <p>Points/Second: <span id="pps">0.50</span></p>
+                </td>
+            </tr>
+            </table>
+          <center>
+          <br>
+          <table class="upgradeShop">
+            <tr>
+                <td id="nameAndDescription">
+                    <p>Base Increaser[<span id="upgrade1Amount">0</span>]</p>
+                    <p>Increase base point gain by 1</p>
+                </td>
+                <td id = "price" onclick="upgrade1()">
+                    <p>COST: <span id="upgrade1Price">2</span></p>
+                </td>
+                <td id = "max" onclick="upgrade1()">
+                    <p>MAX</p>
+                </td>
+
+          </tr>
+
+          <table class="upgradeShop">
+          <tr>
+              <td id="nameAndDescription">
+                  <p>Point Multiplier[<span id="upgrade2Amount">0</span>]</p>
+                  <p>Increase point by 1.5x</p>
+              </td>
+              <td id = "price" onclick="upgrade2()">
+                  <p>COST: <span id="upgrade2Price">25</span></p>
+              </td>
+              <td id = "max" onclick="upgrade2()">
+                  <p>MAX</p>
+              </td>
+              
+      </tr>
+
+          </table>
+          </center>
+          </div>
+        </div>
+        
+        <div id="Options" class="tabs">
+          <div class="centralSection">
+            <table class="Options">
+              <tr>
+                  <td id="optionName" onclick="saveGame()">
+                      <p>Save</p>
+                  </td>
+                  <td id="optionName" onclick="saveGame()">
+                    <p>Load</p>
+                </td>
+                <td id="optionNameSpecial" onclick="saveGame()">
+                  <p>HARD RESET</p>
+              </td>
+             </tr>
+             </table>
+          </div> 
+        </div>
+
+        <table class="gameTabs">
+          <tr>
+              <td id="TabName" class="link" onclick="switchTab(event, 'Game')">
+                  <p>Game</p>
+              </td>
+         </tr>
+         <table class="gameTabs">
+          <tr>
+              <td id="TabName" class="link" onclick="switchTab(event, 'Options')">
+                  <p>Options</p>
+              </td>
+         </tr>
+         <script type="text/javascript" src="core/TabHandler.js">
+        </script>
+        <script>
+
+            var points = 0;
+
+            var upgrade1Amount = 0
+            var upgrade1Price = 2
+            var upgrade2Amount = 0
+            var upgrade2Price = 25
+            var upgrade2Multi = 1
+
+            function addValue(amount) {
+            points += amount;
+            document.getElementById("points").innerHTML = parseFloat(points).toFixed(2);
+            }
+            function addUpgrade1(amount) {
+                upgrade1Amount += amount
+                document.getElementById("upgrade1Amount").innerHTML = upgrade1Amount;
+            }
+            function addUpgrade2(amount) {
+                upgrade2Amount += amount
+                document.getElementById("upgrade2Amount").innerHTML = upgrade2Amount;
+            }
+            function setUpgrade1Price(amount) {
+                upgrade1Price = amount
+                document.getElementById("upgrade1Price").innerHTML = upgrade1Price;
+            }
+            function setUpgrade2Price(amount) {
+                upgrade2Price = amount
+                document.getElementById("upgrade2Price").innerHTML = upgrade2Price;
+            }
+            function setUpgrade2Multi(amount) {
+                upgrade2Multi = amount
+            }
+
+            function upgrade1() {
+                if (points >= upgrade1Price) {  
+                    addValue(-upgrade1Price);
+                    addUpgrade1(1);
+                    var value = parseFloat((2 * (upgrade1Amount + 1)) * ((upgrade1Amount + 1) ** 1.06)).toFixed(2);
+
+                    setUpgrade1Price(value);
+                }
+            }
+            function upgrade2() {
+                if (points >= upgrade2Price) {  
+                    addValue(-upgrade2Price);   
+                    addUpgrade2(1);
+                    setUpgrade2Multi(upgrade2Multi * 1.5)
+                    var value = parseFloat((25 * (upgrade2Amount + 1)) * ((upgrade2Amount + 1) ** 1.12)).toFixed(2);
+
+                    setUpgrade2Price(value);
+                }
+            }
+
+
+
+            function saveGame() {
+              var gameSave = {
+                points: points,
+                upgrade1Amount: upgrade1Amount,
+                upgrade2Amount: upgrade2Amount,
+                upgrade1Price: upgrade1Price,
+                upgrade2Price: upgrade2Price,
+                upgrade2Multi: upgrade2Multi
+              };
+              localStorage.setItem("gameSave", JSON.stringify(gameSave));
+            }
+
+            setInterval(function() {
+            saveGame()
+            }, 60000);
+
+            setInterval(function() {
+              addValue(((upgrade1Amount + 1) * upgrade2Multi)/200);
+              document.getElementById("pps").innerHTML = parseFloat(((upgrade1Amount + 1) * upgrade2Multi)/2 ).toFixed(2);
+            }, 10);
+            switchTab(event, 'Game')
+        </script>
+    </body>
+</html>
